@@ -118,7 +118,7 @@ Classe Objeto (Classe Aninhada Privada):
 Método IndexFromHash:
 Calcula o índice da tabela de hash para uma chave.
 
-Método BucketFromKey:=
+Método BucketFromKey:
 Dada uma chave, retorna a lista ligada (bucket) associada a essa chave.
 
 Método put:
