@@ -41,34 +41,41 @@ public class HashMapList<K, V> implements HashMap<K,V> {
 
     public void put(K key, V value) {
         if (key == null) throw new IllegalArgumentException("A chave não pode ser Nula.");
-
-        if (size >= Limite * tamanho_maximo) resize();                                              // Se a lista estiver 75% cheia, aumenta o tamanho.
-
-        LinkedList<Objeto<K, V>> espaco_de_colisoes = BucketFromKey(key);                           // Lista a ser utilziada
+        if (value == null) throw new IllegalArgumentException("O valor não pode ser Nulo."); // Adicionando verificação para a chave e valor
+    
+        if (size >= Limite * tamanho_maximo) resize();
+        
+        LinkedList<Objeto<K, V>> espaco_de_colisoes = BucketFromKey(key);
         for (Objeto<K, V> objeto : espaco_de_colisoes) {
             if (objeto.key.equals(key)) {
-                objeto.value = value;                                                               // Se já existir uma chave identica, atualiza o valor.
+                objeto.value = value;
                 return;
             }
         }
         if (espaco_de_colisoes.size()>0) colisions++;
-        espaco_de_colisoes.add(new Objeto<>(key, value));                                           // Caso contrario, adiciona um novo objeto e aumenta o tamnho.
+        espaco_de_colisoes.add(new Objeto<>(key, value));
         size++;                                         
     }
-
+    
     public V get(K key) {
         if (key == null) return null;
-        
-        LinkedList<Objeto<K, V>> espaco_de_colisoes = BucketFromKey(key);                           // Lista a ser utilziada
-        
-        for (Objeto<K, V> objeto : espaco_de_colisoes) {
-            if (objeto.key.equals(key)) {                                                           // Retorna o valor se chave for encontrada.
-                return objeto.value;
+    
+        try {
+            LinkedList<Objeto<K, V>> espaco_de_colisoes = BucketFromKey(key);
+            for (Objeto<K, V> objeto : espaco_de_colisoes) {
+                if (objeto.key.equals(key)) { 
+                    return objeto.value;
+                }
             }
+    
+            throw new IllegalArgumentException("A chave especificada não foi encontrada no HashMap.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Aviso: Chave não encontrada"); // Imprime um aviso no console
         }
-
-        return null;
+    
+        return null; // Retorno se a exceção for capturada
     }
+    
 
     public void remove(K key) {
         if (key == null) return;

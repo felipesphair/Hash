@@ -31,37 +31,47 @@ public class HashMapEA<K, V> implements HashMap<K,V> {
 
     public void put(K key, V value) {
         if (key == null) throw new IllegalArgumentException("A chave não pode ser Nula.");
-
+        if (value == null) throw new IllegalArgumentException("O valor não pode ser Nulo."); // Adicionando verificação para o valor
+    
         if (size >= Limite * tamanho_maximo) resize();
-
+        
         int index = IndexFromHash(key);
         int initialIndex = index;
-        while (table[index] != null) {                                                      // Se já estiver usado
-            if (!table[index].deleted && table[index].key.equals(key)) {                    // Não tiver sido removido, e foir igual a uma chave existe, atualiza.
+        while (table[index] != null) {                                                  
+            if (!table[index].deleted && table[index].key.equals(key)) {                    
                 table[index].value = value;
                 return;
             }
-            index = (index + 1) % tamanho_maximo;                                           // for uma chave nova, calcula o proximo valor disponivel.
+            index = (index + 1) % tamanho_maximo;                                           
             colisions++;
         }
-        table[index] = new Objeto<>(key, value);                                            // Adiciona o valor.
-        size++;                                                                             // Aumenta o tamanho
+        table[index] = new Objeto<>(key, value);                                            
+        size++;                                                                             
     }
+    
 
     public V get(K key) {
         if (key == null) return null;
-
-        int index = IndexFromHash(key);
-        int initialIndex = index;
-        while (table[index] != null) {                                                    // Se tiver algo onde estou buscando
-            if (!table[index].deleted && table[index].key.equals(key)) {                  // Caso não tenha sido removido, e a chave for a mesma
-                return table[index].value;                                                // devolvo.
+    
+        try {
+            int index = IndexFromHash(key);
+            int initialIndex = index;
+            while (table[index] != null) {                                                    
+                if (!table[index].deleted && table[index].key.equals(key)) {                  
+                    return table[index].value;                                                
+                }
+                index = (index + 1) % tamanho_maximo;                                         
+                if (index == initialIndex) break;                                             
             }
-            index = (index + 1) % tamanho_maximo;                                         // do contrario busco na proxima.
-            if (index == initialIndex) break;                                             // paro se dei a volta
+    
+            throw new IllegalArgumentException("A chave especificada não foi encontrada no HashMap.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Aviso: Chave não encontrada"); // Imprime um aviso no console
         }
-        return null;                                                                      
+    
+        return null; // Retorno se a exceção for capturada
     }
+    
 
     public void remove(K key) {
         if (key == null) {

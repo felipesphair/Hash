@@ -86,10 +86,13 @@ public class example {
       System.out.println("HashMap2 - Chave3: 3, Valor: " + HM2.get(3));
 
 
+      
+
+
       System.out.print( "HashMap1 - Tamanho: " + HM1.size()  + " | ");
       System.out.println("HashMap2 - Tamanho: " + HM2.size());
 
-
+      System.out.println("Removendo alguns itens: ");
       HM1.remove("Henrycke");
       HM2.remove(1);
       
@@ -99,8 +102,10 @@ public class example {
       HM1.remove("João");
       HM2.remove(3);
 
-      System.out.println( "HashMap1 - Tamanho: " + HM1.size()  + " | ");
+      System.out.print( "HashMap1 - Tamanho: " + HM1.size()  + " | ");
       System.out.println("HashMap2 - Tamanho: " + HM2.size());
+
+      
   }
 
   public static void performanceTest(HashMap<String, Integer> hashMap, int qtdElementos) {
@@ -119,7 +124,7 @@ public class example {
     long endTime = System.currentTimeMillis();
     long totalTime = endTime - startTime;
 
-    System.out.println("Tempo total para buscar " + qtdElementos + " elementos: " + totalTime + " ms");
+    System.out.print("Tempo total para buscar " + qtdElementos + " elementos: " + totalTime + " ms");
     System.out.println("Colisoes: " + hashMap.colisions());
 }
 
