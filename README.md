@@ -96,6 +96,11 @@ Retorna o número de colisões que ocorreram durante as operações.
 
 Quando duas chaves diferentes resultam no mesmo índice de dispersão (devido a colisões), o código verifica se a posição está ocupada. Se estiver, ele procura a próxima posição disponível (usando uma técnica chamada "linear probing"). Isso é feito até que uma posição vazia seja encontrada.
 
+<p align="center" width="100%">
+  <img width="50%" src="https://cdn.discordapp.com/attachments/1145368578737057802/1163185785751744552/image.png?ex=653ea82e&is=652c332e&hm=85e5e5239ce54e900daf06a61000f55c04e64daab67092e46b3cf9bd2e7f89fd&">
+  
+</p>
+
 <hr>
 
 
@@ -137,3 +142,7 @@ Métodos size e colisions:
 Retornam o número de elementos no mapa e o número de colisões, respectivamente.
 Em resumo, esta implementação de HashMap resolve colisões mantendo uma lista ligada em cada posição da tabela. Isso permite que várias entradas com o mesmo valor de dispersão (hash) coexistam no mesmo índice.
 
+<p align="center" width="100%">
+  <img width="50%" src="https://cdn.discordapp.com/attachments/1145368578737057802/1163185728700829726/image.png?ex=653ea820&is=652c3320&hm=5899cb15ca95b5ab2251c3074dd155044d952ce8282f731c12e927a7d3d22ede&">
+  
+</p>
