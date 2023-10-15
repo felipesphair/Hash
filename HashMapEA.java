@@ -1,37 +1,25 @@
-public class HashMapEA<K, V> implements HashMap<K,V> {
+public class HashMapEA<K, V> implements HashMap<K, V> {
     private final int Tamanho_Inicial = 16;
     private final double Limite = 0.75;
 
     private int size;
     private int colisions;
     private int tamanho_maximo;
-    private Objeto<K, V>[] table;
+    private ObjetoEA<K, V>[] table;
 
     public HashMapEA() {
         this.tamanho_maximo = Tamanho_Inicial;
         this.size = 0;
-        this.table = new Objeto[tamanho_maximo];
+        this.table = new ObjetoEA[tamanho_maximo];
     }
 
-    private static class Objeto<K, V> {
-        K key;
-        V value;
-        boolean deleted;
-
-        Objeto(K key, V value) {
-            this.key = key;
-            this.value = value;
-            this.deleted = false;
-        }
-    }
-
-    private int IndexFromHash(K key) {                                                                                                                         // Calcula o hash da chave
-        return (key.hashCode() & 0x7FFFFFFF) % tamanho_maximo;                                                // Calcula o index usando somente os valores positivos do hashCode e levando em consideração a tamanho da tabela.
+    private int IndexFromHash(K key) {
+        return (key.hashCode() & 0x7FFFFFFF) % tamanho_maximo;
     }
 
     public void put(K key, V value) {
         if (key == null) throw new IllegalArgumentException("A chave não pode ser Nula.");
-        if (value == null) throw new IllegalArgumentException("O valor não pode ser Nulo."); // Adicionando verificação para o valor
+        if (value == null) throw new IllegalArgumentException("O valor não pode ser Nulo.");
     
         if (size >= Limite * tamanho_maximo) resize();
         
@@ -45,11 +33,10 @@ public class HashMapEA<K, V> implements HashMap<K,V> {
             index = (index + 1) % tamanho_maximo;                                           
             colisions++;
         }
-        table[index] = new Objeto<>(key, value);                                            
+        table[index] = new ObjetoEA<>(key, value);                                            
         size++;                                                                             
     }
     
-
     public V get(K key) {
         if (key == null) return null;
     
@@ -66,12 +53,11 @@ public class HashMapEA<K, V> implements HashMap<K,V> {
     
             throw new IllegalArgumentException("A chave especificada não foi encontrada no HashMap.");
         } catch (IllegalArgumentException e) {
-            System.out.println("Aviso: Chave não encontrada"); // Imprime um aviso no console
+            System.out.println("Aviso: Chave não encontrada");
         }
     
-        return null; // Retorno se a exceção for capturada
+        return null;
     }
-    
 
     public void remove(K key) {
         if (key == null) {
@@ -95,22 +81,23 @@ public class HashMapEA<K, V> implements HashMap<K,V> {
 
     private void resize() {
         tamanho_maximo *= 2;
-        Objeto<K, V>[] newTable = new Objeto[tamanho_maximo];               // cria uma nova tabela
-        for (int i = 0; i < table.length; i++) {                            // pasa por todas as posições da antiga
+        ObjetoEA<K, V>[] newTable = new ObjetoEA[tamanho_maximo];              
+        for (int i = 0; i < table.length; i++) {                            
             if (table[i] != null && !table[i].deleted) {
-                int index = IndexFromHash(table[i].key);                    // calcula um novo indice pros valores relevantes (não deletados ou não nulos)
-                while (newTable[index] != null) {                           // se já tiver algo nessa posição
-                    index = (index + 1) % tamanho_maximo;                   // calcula a proxima valida
+                int index = IndexFromHash(table[i].key);                    
+                while (newTable[index] != null) {                           
+                    index = (index + 1) % tamanho_maximo;                   
                 }
-                newTable[index] = table[i];                                 // joga o valor pra nova tabela
+                newTable[index] = table[i];                                 
             }
         }
-        table = newTable;                                                   // atualiza a referência da tabela anterior
+        table = newTable;                                                   
     }
 
     public int size() {
         return size;
     }
+    
     public int colisions(){
         return colisions;
     }
