@@ -27,6 +27,13 @@ Uma tabela hash é uma estrutura de dados usada para armazenar pares de chaves/v
 
 # Como Funciona o Código: 
 
+**MAIN.JAVA**:
+
+Cria instâncias de quatro tipos diferentes de HashMaps (HML1, HML2, HME1, HME2) e executa os testes com o método simpleTest para cada par.
+Permite ao usuário escolher entre realizar testes de desempenho usando encadeamento por lista ou encadeamento aberto até que o usuário opte por encerrar o programa.
+
+<hr>
+
 **EXAMPLE.JAVA**:
 
 - Demonstra o uso de HashMaps e avalia o desempenho de duas implementações diferentes: uma usando encadeamento por lista e outra usando encadeamento aberto.
@@ -40,9 +47,6 @@ Remove os elementos e novamente exibe os tamanhos.
 Insere uma quantidade especificada de elementos em um HashMap e mede o tempo total para inserção e remoção.
 Também exibe a quantidade de colisões simuladas.
 
-- No main:
-Cria instâncias de quatro tipos diferentes de HashMaps (HML1, HML2, HME1, HME2) e executa os testes com o método simpleTest para cada par.
-Permite ao usuário escolher entre realizar testes de desempenho usando encadeamento por lista ou encadeamento aberto até que o usuário opte por encerrar o programa.
 
 <hr> 
 
