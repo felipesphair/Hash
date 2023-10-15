@@ -29,7 +29,7 @@ Uma tabela hash é uma estrutura de dados usada para armazenar pares de chaves/v
 
 **MAIN.JAVA**:
 
-Cria instâncias de quatro tipos diferentes de HashMaps (HML1, HML2, HME1, HME2) e executa os testes com o método simpleTest para cada par.
+- Cria instâncias de quatro tipos diferentes de HashMaps (HML1, HML2, HME1, HME2) e executa os testes com o método simpleTest para cada par.
 Permite ao usuário escolher entre realizar testes de desempenho usando encadeamento por lista ou encadeamento aberto até que o usuário opte por encerrar o programa.
 
 <hr>
