@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 public class example {
 
@@ -124,53 +124,9 @@ public class example {
     long endTime = System.currentTimeMillis();
     long totalTime = endTime - startTime;
 
-    System.out.print("Tempo total para buscar " + qtdElementos + " elementos: " + totalTime + " ms");
+    System.out.print("Tempo total para buscar " + qtdElementos + " elementos: " + totalTime + " ms; ");
     System.out.println("Colisoes: " + hashMap.colisions());
 }
 
-  public static void main(String[] args) {
-    HashMapList<String, Integer> HML1 = new HashMapList<>();
-    HashMapList<Integer, String> HML2 = new HashMapList<>();
-
-    HashMapEA<String, Integer> HME1 = new HashMapEA<>();
-    HashMapEA<Integer, String> HME2 = new HashMapEA<>();
-
-
-    System.out.println("HashMapList:");
-
-    simpleTest(HML1, HML2);
-
-    System.out.println(" ");
-
-    System.out.println("HashMapEA:");
-
-    simpleTest(HME1, HME2);
-
-    final int qtdElementos = 999999;
-    while (true) {
-      Scanner scanner = new Scanner(System.in);
-      System.out.println(" ");
-
-      System.out.println("Teste de performance");
-      System.out.println("0 - Colisão por Lista encadeada ||| 1- Colisão por Encadeamento Aberto");
-      System.out.println("ESCOLHA entre 0 e 1 ou 2 para finalizar: ");
-      int option = scanner.nextInt();
-
-      switch (option) {
-        case 1:
-          performanceTest(new HashMapEA<String, Integer>(), qtdElementos);
-          break;
-        case 0:
-          performanceTest(new HashMapList<String, Integer>(), qtdElementos);
-          break;
-        case 2:
-          return;
-       default:
-          System.out.println("Opção inválida. Por favor, escolha entre 0 e 2.");
-          
-      }
-    }
-    
-}
 
 }
