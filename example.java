@@ -11,17 +11,17 @@ public class example {
       HM2.put(2, "Felipe");
       HM2.put(3, "João");
 
-      System.out.print(  "HashMap1 - Chave1: " + HM1.get("Henrycke") + " | ");
-      System.out.println("HashMap2 - Chave1: " + HM2.get(1));
+      System.out.print("HashMap1 - Chave1: Henrycke, Valor: " + HM1.get("Henrycke") + " | ");
+      System.out.println("HashMap2 - Chave1: 1, Valor: " + HM2.get(1));
 
-      System.out.print(  "HashMap1 - Chave2: " + HM1.get("Felipe") + " | ");
-      System.out.println("HashMap2 - Chave2: " + HM2.get(2));
+      System.out.print("HashMap1 - Chave2: Felipe, Valor: " + HM1.get("Felipe") + " | ");
+      System.out.println("HashMap2 - Chave2: 2, Valor: " + HM2.get(2));
 
-      System.out.print(  "HashMap1 - Chave3: " + HM1.get("João") + " | ");
-      System.out.println("HashMap2 - Chave3: " + HM2.get(3));
-      
+      System.out.print("HashMap1 - Chave3: João, Valor: " + HM1.get("João") + " | ");
+      System.out.println("HashMap2 - Chave3: 3, Valor: " + HM2.get(3));
 
-      System.out.print(  "HashMap1 - Tamanho: " + HM1.size()  + " | ");
+
+      System.out.print( "HashMap1 - Tamanho: " + HM1.size()  + " | ");
       System.out.println("HashMap2 - Tamanho: " + HM2.size());
 
 
@@ -34,7 +34,7 @@ public class example {
       HM1.remove("João");
       HM2.remove(3);
 
-      System.out.print(  "HashMap1 - Tamanho: " + HM1.size()  + " | ");
+      System.out.println( "HashMap1 - Tamanho: " + HM1.size()  + " | ");
       System.out.println("HashMap2 - Tamanho: " + HM2.size());
   }
 
@@ -65,24 +65,42 @@ public class example {
     HashMapEA<String, Integer> HME1 = new HashMapEA<>();
     HashMapEA<Integer, String> HME2 = new HashMapEA<>();
 
+
+    System.out.println("HashMapList:");
+
     simpleTest(HML1, HML2);
+
+    System.out.println(" ");
+
+    System.out.println("HashMapEA:");
+
     simpleTest(HME1, HME2);
 
     final int qtdElementos = 999999;
+    while (true) {
+      Scanner scanner = new Scanner(System.in);
+      System.out.println(" ");
 
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Teste de performance");
-    System.out.println("0 - Colisão por Lista encadeada ||| 1- Colisão por Encadeamento Aberto");
-    int option = scanner.nextInt();
+      System.out.println("Teste de performance");
+      System.out.println("0 - Colisão por Lista encadeada ||| 1- Colisão por Encadeamento Aberto");
+      System.out.println("ESCOLHA entre 0 e 1 ou 2 para finalizar: ");
+      int option = scanner.nextInt();
 
-    switch (option) {
-      case 1:
-        performanceTest(new HashMapEA<String, Integer>(), qtdElementos);
-        break;
-      case 0:
-        performanceTest(new HashMapList<String, Integer>(), qtdElementos);
-        break;
+      switch (option) {
+        case 1:
+          performanceTest(new HashMapEA<String, Integer>(), qtdElementos);
+          break;
+        case 0:
+          performanceTest(new HashMapList<String, Integer>(), qtdElementos);
+          break;
+        case 2:
+          return;
+       default:
+          System.out.println("Opção inválida. Por favor, escolha entre 0 e 2.");
+          
+      }
     }
+    
 }
 
 }
