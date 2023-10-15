@@ -29,18 +29,18 @@ Uma tabela hash é uma estrutura de dados usada para armazenar pares de chaves/v
 
 **EXAMPLE.JAVA**:
 
-Demonstra o uso de HashMaps e avalia o desempenho de duas implementações diferentes: uma usando encadeamento por lista e outra usando encadeamento aberto.
+- Demonstra o uso de HashMaps e avalia o desempenho de duas implementações diferentes: uma usando encadeamento por lista e outra usando encadeamento aberto.
 
-O método simpleTest:
+- O método simpleTest:
 Insere uma série de elementos em dois HashMaps (HM1 e HM2) e imprime valores associados a chaves específicas.
 Exibe o tamanho dos HashMaps.
 Remove os elementos e novamente exibe os tamanhos.
 
-O método performanceTest:
+- O método performanceTest:
 Insere uma quantidade especificada de elementos em um HashMap e mede o tempo total para inserção e remoção.
 Também exibe a quantidade de colisões simuladas.
 
-No main:
+- No main:
 Cria instâncias de quatro tipos diferentes de HashMaps (HML1, HML2, HME1, HME2) e executa os testes com o método simpleTest para cada par.
 Permite ao usuário escolher entre realizar testes de desempenho usando encadeamento por lista ou encadeamento aberto até que o usuário opte por encerrar o programa.
 
@@ -48,13 +48,13 @@ Permite ao usuário escolher entre realizar testes de desempenho usando encadeam
 
 **HashMap.JAVA**:
 
-O arquivo contém uma interface chamada HashMap que define um conjunto de operações comuns para um mapa (ou tabela de dispersão) em Java. Essas operações incluem a recuperação de valores por meio de chaves, inserção de pares chave-valor, remoção de entradas, obtenção do número total de entradas e a contagem de colisões (específico para a implementação do HashMap).
+- O arquivo contém uma interface chamada HashMap que define um conjunto de operações comuns para um mapa (ou tabela de dispersão) em Java. Essas operações incluem a recuperação de valores por meio de chaves, inserção de pares chave-valor, remoção de entradas, obtenção do número total de entradas e a contagem de colisões (específico para a implementação do HashMap).
 
-Essa interface serve como um contrato para qualquer classe que deseje implementar um HashMap em Java. Ela estabelece as operações básicas que devem estar disponíveis em qualquer implementação funcional de um mapa. Cada uma dessas operações é definida por uma assinatura de método, indicando o nome, os tipos de parâmetros e o tipo de retorno esperado.
+- Essa interface serve como um contrato para qualquer classe que deseje implementar um HashMap em Java. Ela estabelece as operações básicas que devem estar disponíveis em qualquer implementação funcional de um mapa. Cada uma dessas operações é definida por uma assinatura de método, indicando o nome, os tipos de parâmetros e o tipo de retorno esperado.
 
-Cabe à classe que implementa essa interface fornecer as implementações específicas para cada um desses métodos, de acordo com a lógica desejada para a estrutura de dados do HashMap. Por exemplo, como as colisões são tratadas ou como a busca por uma chave é realizada pode variar de uma implementação para outra.
+- Cabe à classe que implementa essa interface fornecer as implementações específicas para cada um desses métodos, de acordo com a lógica desejada para a estrutura de dados do HashMap. Por exemplo, como as colisões são tratadas ou como a busca por uma chave é realizada pode variar de uma implementação para outra.
 
-Portanto, esse arquivo fornece uma estrutura genérica para a criação de classes que representem HashMaps em Java, permitindo uma maior flexibilidade e reutilização de código em diferentes contextos.
+- Portanto, esse arquivo fornece uma estrutura genérica para a criação de classes que representem HashMaps em Java, permitindo uma maior flexibilidade e reutilização de código em diferentes contextos.
 
 <hr> 
 
