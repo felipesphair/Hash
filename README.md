@@ -1,4 +1,4 @@
-# Hash
+# Hash Table: 
 
 Uma tabela hash é uma estrutura de dados usada para armazenar pares de chaves/valores. Ele usa uma função hash para calcular um índice em um array no qual um elemento será inserido ou pesquisado. Ao usar uma boa função hash, o hash pode funcionar bem.
 
@@ -8,7 +8,7 @@ Uma tabela hash é uma estrutura de dados usada para armazenar pares de chaves/v
 </p>
 
 
-# Funcionalidades do Projeto
+# Funcionalidades do Projeto: 
 
 
 **1. Aceita de forma genérica o tipo da chave tanto como string como inteiro:** Isso significa que a tabela hash é flexível o suficiente para aceitar chaves tanto no formato de strings como de inteiros.
@@ -24,3 +24,5 @@ Uma tabela hash é uma estrutura de dados usada para armazenar pares de chaves/v
 **6. Apresenta um teste de eficiência na busca em tempo:** Isso indica que há um procedimento ou código disponível para testar e avaliar o desempenho da busca na tabela hash em relação ao tempo.
 
 **7. Apresenta o fator carga que ao atingir a capacidade máxima ele dobra o tamanho da array de armazenamento utilizado na tabela hash:** O fator de carga é um indicador de quão "cheia" está a tabela hash. Quando atinge uma capacidade máxima predefinida, a tabela hash expande sua capacidade (geralmente duplicando o tamanho da array de armazenamento) para manter uma boa eficiência.
+
+# Como Funciona o Código: 
