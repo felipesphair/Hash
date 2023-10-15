@@ -65,8 +65,7 @@ Permite ao usuário escolher entre realizar testes de desempenho usando encadeam
   
 </p>
 
-Atributos:
-
+- Atributos:
 Tamanho_Inicial: Define o tamanho inicial da tabela (16 por padrão).
 Limite: Define o limite de ocupação da tabela (0.75 por padrão).
 size: Armazena o número de elementos na tabela.
@@ -75,31 +74,31 @@ tamanho_maximo: Armazena o tamanho máximo atual da tabela.
 table: É um array de objetos Objeto que representa a tabela de dispersão.
 Classe Interna Objeto:
 
-É uma classe que representa um par chave-valor, junto com um indicador de exclusão (deleted). Isso permite marcar elementos como "removidos" sem removê-los fisicamente, o que é útil para operações de remoção em uma tabela de dispersão.
+- É uma classe que representa um par chave-valor, junto com um indicador de exclusão (deleted). Isso permite marcar elementos como "removidos" sem removê-los fisicamente, o que é útil para operações de remoção em uma tabela de dispersão.
 
-IndexFromHash(K key):
+- IndexFromHash(K key):
 Método privado que calcula o índice de dispersão para uma dada chave key.
 
-put(K key, V value):
+- put(K key, V value):
 Adiciona um par chave-valor na tabela. Se a chave já existir, o valor é atualizado.
 Se o fator de carga (número de elementos / tamanho da tabela) exceder o limite, a tabela é redimensionada antes da inserção.
 
-get(K key):
+- get(K key):
 Retorna o valor associado a uma chave dada. Se a chave não for encontrada, retorna null.
 
-remove(K key):
+- remove(K key):
 Remove um elemento da tabela com a chave dada. O elemento não é removido fisicamente, mas marcado como excluído.
 
-resize():
+- resize():
 Redimensiona a tabela quando o fator de carga excede o limite. Isso envolve criar uma nova tabela com o dobro do tamanho e reorganizar os elementos.
 
-size():
+- size():
 Retorna o número de elementos na tabela.
 
-colisions():
+- colisions():
 Retorna o número de colisões que ocorreram durante as operações.
 
-Quando duas chaves diferentes resultam no mesmo índice de dispersão (devido a colisões), o código verifica se a posição está ocupada. Se estiver, ele procura a próxima posição disponível (usando uma técnica chamada "linear probing"). Isso é feito até que uma posição vazia seja encontrada.
+- Quando duas chaves diferentes resultam no mesmo índice de dispersão (devido a colisões), o código verifica se a posição está ocupada. Se estiver, ele procura a próxima posição disponível (usando uma técnica chamada "linear probing"). Isso é feito até que uma posição vazia seja encontrada.
 
 
 
@@ -113,8 +112,7 @@ Quando duas chaves diferentes resultam no mesmo índice de dispersão (devido a 
   
 </p>
 
-Atributos:
-
+- Atributos:
 Tamanho_Inicial: Define o tamanho inicial da tabela de hash (neste caso, 16).
 Limite: Define o limite de carga (load factor) para redimensionamento da tabela.
 size: Armazena o número de elementos atualmente no mapa.
@@ -123,29 +121,29 @@ tamanho_maximo: Armazena o tamanho máximo da tabela de hash.
 table: É um array de listas ligadas (LinkedList) onde os elementos são armazenados.
 Método Construtor:
 
-Inicializa os atributos, cria a tabela com listas ligadas e a preenche com listas vazias.
+- Inicializa os atributos, cria a tabela com listas ligadas e a preenche com listas vazias.
 Classe Objeto (Classe Aninhada Privada):
 É uma classe que representa um par de chave-valor.
 
-Método IndexFromHash:
+- Método IndexFromHash:
 Calcula o índice da tabela de hash para uma chave.
 
-Método BucketFromKey:
+- Método BucketFromKey:
 Dada uma chave, retorna a lista ligada (bucket) associada a essa chave.
 
-Método put:
+- Método put:
 Insere um par chave-valor no mapa. Se a chave já existe, o valor é atualizado. Caso contrário, um novo par é adicionado.
 
-Método get:
+- Método get:
 Obtém o valor associado a uma chave específica.
 
-Método remove:
+- Método remove:
 Remove o par chave-valor associado a uma chave específica.
 
-Método resize:
+- Método resize:
 Redimensiona a tabela de hash quando o limite de carga é atingido. Isso envolve a criação de uma nova tabela com o dobro do tamanho e a redistribuição dos elementos existentes.
 
-Métodos size e colisions:
+- Métodos size e colisions:
 Retornam o número de elementos no mapa e o número de colisões, respectivamente.
 Em resumo, esta implementação de HashMap resolve colisões mantendo uma lista ligada em cada posição da tabela. Isso permite que várias entradas com o mesmo valor de dispersão (hash) coexistam no mesmo índice.
 
