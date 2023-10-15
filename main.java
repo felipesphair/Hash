@@ -30,10 +30,10 @@ public class main {
 
             switch (option) {
                 case 1:
-                    example.performanceTest(new HashMapEA<String, Integer>(), qtdElementos);
+                    example.performanceTestSearch(new HashMapEA<String, Integer>(), qtdElementos);
                     break;
                 case 0:
-                    example.performanceTest(new HashMapList<String, Integer>(), qtdElementos);
+                    example.performanceTestSearch(new HashMapList<String, Integer>(), qtdElementos);
                     break;
                 case 2:
                     return;

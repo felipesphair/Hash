@@ -108,7 +108,7 @@ public class example {
       
   }
 
-  public static void performanceTest(HashMap<String, Integer> hashMap, int qtdElementos) {
+  public static void performanceTestSearch(HashMap<String, Integer> hashMap, int qtdElementos) {
     // Inserir elementos
     for (int i = 0; i < qtdElementos; i++) {
         hashMap.put("Valor " + i, i);
@@ -118,7 +118,7 @@ public class example {
     long startTime = System.currentTimeMillis();
 
     for (int i = 0; i < qtdElementos; i++) {
-       hashMap.remove(String.format("Valor %d", i));
+       Integer valor = hashMap.get("Valor " + i);
     }
 
     long endTime = System.currentTimeMillis();
@@ -127,6 +127,5 @@ public class example {
     System.out.print("Tempo total para buscar " + qtdElementos + " elementos: " + totalTime + " ms; ");
     System.out.println("Colisoes: " + hashMap.colisions());
 }
-
 
 }
