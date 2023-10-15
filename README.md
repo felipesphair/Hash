@@ -46,7 +46,7 @@ Permite ao usuário escolher entre realizar testes de desempenho usando encadeam
 
 <hr> 
 
-**HashMapList.JAVA**:
+**HashMap.JAVA**:
 
 O arquivo contém uma interface chamada HashMap que define um conjunto de operações comuns para um mapa (ou tabela de dispersão) em Java. Essas operações incluem a recuperação de valores por meio de chaves, inserção de pares chave-valor, remoção de entradas, obtenção do número total de entradas e a contagem de colisões (específico para a implementação do HashMap).
 
@@ -99,7 +99,7 @@ Quando duas chaves diferentes resultam no mesmo índice de dispersão (devido a 
 <hr>
 
 
-**HashMap.JAVA**:
+**HashMapList.JAVA**:
 
 Atributos:
 
