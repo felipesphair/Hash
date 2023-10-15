@@ -44,7 +44,7 @@ Exibe o tamanho dos HashMaps.
 Remove os elementos e novamente exibe os tamanhos.
 
 - O método performanceTest:
-Insere uma quantidade especificada de elementos em um HashMap e mede o tempo total para inserção e remoção.
+Insere uma quantidade especificada de elementos em um HashMap e mede o tempo total para inserção e busca.
 Também exibe a quantidade de colisões simuladas.
 
 
