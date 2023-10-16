@@ -104,4 +104,15 @@ public class HashMapList<K, V> implements HashMap<K, V> {
     public int colisions(){
         return colisions;
     }
+
+    public void debugPrint() {
+        for (int i = 0; i < tamanho_maximo; i++) {
+            System.out.print("Índice " + i + ": ");
+            for (Objeto<K, V> objeto : table[i]) {
+                System.out.print("(" + objeto.key + ", " + objeto.value + ") ");
+            }
+            System.out.println();
+        }
+    }
+    
 }

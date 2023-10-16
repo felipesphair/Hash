@@ -13,10 +13,17 @@ public class main {
         example.simpleTest(HML1, HML2);
 
         System.out.println(" ");
+        System.out.println("HashMapLinst: ");
+        HML1.debugPrint();
+
+        System.out.println(" ");
 
         System.out.println("HashMapEA:");
 
         example.simpleTest(HME1, HME2);
+        System.out.println(" ");
+        System.out.println("HashMapEA: ");
+        HME1.debugPrint();
 
         final int qtdElementos = 999999;
         while (true) {

@@ -101,4 +101,13 @@ public class HashMapEA<K, V> implements HashMap<K, V> {
     public int colisions(){
         return colisions;
     }
+
+    public void debugPrint() {
+        for (int i = 0; i < tamanho_maximo; i++) {
+            if (table[i] != null) {
+                System.out.println("Índice " + i + ": (" + table[i].key + ", " + table[i].value + ")");
+            }
+        }
+    }
+    
 }

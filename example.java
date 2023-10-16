@@ -37,7 +37,8 @@ public class example {
       HM1.put("Henrycke", 100);
       HM1.put("Felipe", 200);
       HM1.put("João", 300);
-
+      HM1.put("Daneil", 2600);
+      HM1.put("Dnaeil", 2600);
 
 
       HM2.put(1, "João");
@@ -75,6 +76,9 @@ public class example {
       HM2.put(36, "José");
       HM2.put(38, "José");
       HM2.put(39, "João");
+      HM2.put(1, "João");
+      HM2.put(17, "Eduarda");
+      HM2.put(33, "Beatriz");
 
       System.out.print("HashMap1 - Chave1: Henrycke, Valor: " + HM1.get("Henrycke") + " | ");
       System.out.println("HashMap2 - Chave1: 1, Valor: " + HM2.get(1));
