@@ -76,9 +76,9 @@ size: Armazena o número de elementos na tabela.
 colisions: Conta o número de colisões ocorridas durante operações.
 tamanho_maximo: Armazena o tamanho máximo atual da tabela.
 table: É um array de objetos Objeto que representa a tabela de dispersão.
-Classe Interna Objeto:
 
-- É uma classe que representa um par chave-valor, junto com um indicador de exclusão (deleted). Isso permite marcar elementos como "removidos" sem removê-los fisicamente, o que é útil para operações de remoção em uma tabela de dispersão.
+
+- Objeto: É uma classe que representa um par chave-valor, junto com um indicador de exclusão (deleted). Isso permite marcar elementos como "removidos" sem removê-los fisicamente, o que é útil para operações de remoção em uma tabela de dispersão.
 
 - IndexFromHash(K key):
 Método privado que calcula o índice de dispersão para uma dada chave key.
@@ -123,10 +123,11 @@ size: Armazena o número de elementos atualmente no mapa.
 colisions: Conta o número de colisões que ocorrem durante a inserção.
 tamanho_maximo: Armazena o tamanho máximo da tabela de hash.
 table: É um array de listas ligadas (LinkedList) onde os elementos são armazenados.
-Método Construtor:
 
-- Inicializa os atributos, cria a tabela com listas ligadas e a preenche com listas vazias.
-Classe Objeto (Classe Aninhada Privada):
+
+- Método Construtor: Inicializa os atributos, cria a tabela com listas ligadas e a preenche com listas vazias.
+
+- Classe Objeto (Classe Aninhada Privada):
 É uma classe que representa um par de chave-valor.
 
 - Método IndexFromHash:
